@@ -17,6 +17,8 @@ const setShelf = (shelf) => {
 };
 
 const Book = ({ book }) => {
+  const image = book.imageLinks ? book.imageLinks.smallThumbnail : "";
+
   return (
     <li key={book.id}>
       <div className="book">
@@ -26,7 +28,7 @@ const Book = ({ book }) => {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${book.imageLinks.thumbnail})`,
+              backgroundImage: `url(${image})`,
             }}
           ></div>
           <div className="book-shelf-changer">
